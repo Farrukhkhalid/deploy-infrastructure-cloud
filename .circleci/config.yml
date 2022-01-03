@@ -10,12 +10,12 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints: ["b8:82:94:33:76:53:d5:96:08:a3:a3:f6:c5:22:42:72"]
-          name: Install dependencies
+          name: "Install dependencies"
           command: |
             # install the dependencies needed for your playbook
             apk add --update ansible 
       - run:
-          name: Configure server
+          name: "Configure server"
           command: |
             ansible-playbook -i inventory.txt main.yml
 

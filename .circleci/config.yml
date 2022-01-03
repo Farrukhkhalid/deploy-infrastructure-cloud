@@ -16,7 +16,8 @@ jobs:
       - run:
           name: "Configure server"
           command: |
-            ansible-playbook ./main.yml -i inventory
+            cd ansible
+            ansible-playbook main.yml -i inventory
 
   say-hello:
     docker:

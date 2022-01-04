@@ -10,12 +10,15 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints: ["b8:82:94:33:76:53:d5:96:08:a3:a3:f6:c5:22:42:72"]
+          
+      - run:
           name: "Install dependencies"
           command: |
             apk add --update ansible
       - run:
           name: "Configure server"
           command: |
+            cd ansible
             ansible-playbook main.yml -i inventory.txt
 
   say-hello:
